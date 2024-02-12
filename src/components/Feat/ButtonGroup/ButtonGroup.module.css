@@ -1,2 +1,6 @@
 .button-group {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
