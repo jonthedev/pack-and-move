@@ -5,4 +5,8 @@ main {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 4px var(--box-shadow-color);
+
+  display: grid;
+  grid-template-columns: 7fr 4fr;
+  grid-template-rows: 59px 1fr;
 }

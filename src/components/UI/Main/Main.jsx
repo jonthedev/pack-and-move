@@ -1,5 +1,5 @@
 import "./Main.module.css"
 
-export const Main = () => {
-  return <main></main>
+export const Main = ({ children }) => {
+  return <main>{children}</main>
 }
