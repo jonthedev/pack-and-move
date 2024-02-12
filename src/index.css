@@ -1,8 +1,10 @@
 * {
   --primary-bg-color: #c3c3c3;
+  --secondary-bg-color: #e1dfdb;
   --primary-dark-color: #292218;
   --primary-light-color: #fff;
   --box-shadow-color: rgba(0, 0, 0, 0.08);
+  --border-bottom-color: rgba(0, 0, 0, 0.05);
 
   margin: 0;
   padding: 0;

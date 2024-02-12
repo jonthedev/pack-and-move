@@ -1,4 +1,4 @@
-footer {
+.footer {
   width: min(972px, 100%);
   display: flex;
   justify-content: space-between;

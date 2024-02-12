@@ -1,5 +1,5 @@
-import "./HeadingBackground.module.css"
+import styles from "./HeadingBackground.module.css"
 
 export const HeadingBackground = () => {
-  return <h1>Pack & Move</h1>
+  return <h1 className={styles["heading-background"]}>Pack & Move</h1>
 }
