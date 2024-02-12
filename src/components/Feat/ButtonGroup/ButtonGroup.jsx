@@ -1,13 +1,29 @@
 import { Button } from "../Button/Button"
 import styles from "./ButtonGroup.module.css"
 
+const secondaryButtons = [
+  {
+    text: "Mark all as complete"
+  },
+  {
+    text: "Mark all as incomplete"
+  },
+  {
+    text: "Reset to initial"
+  },
+  {
+    text: "Remove all items"
+  }
+]
+
 export const ButtonGroup = () => {
   return (
     <div className={styles["button-group"]}>
-      <Button buttonType="secondary">Mark all as complete</Button>
-      <Button buttonType="secondary">Mark all as incomplete</Button>
-      <Button buttonType="secondary">Reset to initial</Button>
-      <Button buttonType="secondary">Remove all items</Button>
+      {secondaryButtons.map(({ text }) => (
+        <Button key={text} buttonType="secondary">
+          {text}
+        </Button>
+      ))}
     </div>
   )
 }
