@@ -14,7 +14,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter Tight", sans-serif;
   overflow: hidden;
   color: var(--primary-dark-color);
 }
@@ -46,4 +46,10 @@ button {
 
 small {
   font: inherit;
+}
+
+h2 {
+  color: var(--secondary-dark-color);
+  font-size: 16px;
+  font-weight: 500;
 }
