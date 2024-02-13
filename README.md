@@ -15,7 +15,7 @@ The project is built and developed using Vite, providing a fast and efficient de
 - Toggle item states (packed/unpacked)
 - Remove all items from the list
 - Reset the list to its initial state
-- Mark all items as complete or incomplete
+- Mark all items as packed or unpacked
 
 ## Getting Started
 
