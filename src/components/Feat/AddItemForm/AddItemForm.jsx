@@ -5,13 +5,13 @@ import { useState } from "react"
 export const AddItemForm = ({ setItems }) => {
   const [itemText, setItemText] = useState("")
 
-  if (!itemText) {
-    alert("Field can not be empty!")
-    return
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault()
+
+    if (!itemText) {
+      alert("Field can not be empty!")
+      return
+    }
 
     const newItem = {
       id: new Date().getTime(),
