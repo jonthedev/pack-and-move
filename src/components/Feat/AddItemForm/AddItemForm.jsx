@@ -2,7 +2,7 @@ import styles from "./AddItemForm.module.css"
 import { Button } from "../Button/Button"
 import { useRef, useState } from "react"
 
-export const AddItemForm = ({ setItems }) => {
+export const AddItemForm = ({ handleAddItem }) => {
   const [itemText, setItemText] = useState("")
   const inputRef = useRef()
 
@@ -20,7 +20,7 @@ export const AddItemForm = ({ setItems }) => {
       name: itemText,
       packed: false
     }
-    setItems((prevItems) => [...prevItems, newItem])
+    handleAddItem(newItem)
     setItemText("")
   }
 
