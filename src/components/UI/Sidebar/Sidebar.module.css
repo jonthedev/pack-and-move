@@ -1,0 +1,9 @@
+.sidebar {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  background-color: var(--secondary-light-color);
+  border-left: 1px solid var(--border-color);
+  padding: 18px 25px 28px;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,5 +1,27 @@
+import { HeadingBackground } from "./components/Typography/Heading/HeadingBackground"
+import { Footer } from "./components/UI/Footer/Footer"
+import { Header } from "./components/UI/Header/Header"
+import { ItemList } from "./components/Feat/ItemList/ItemList"
+import { Main } from "./components/UI/Main/Main"
+import { Sidebar } from "./components/UI/Sidebar/Sidebar"
+
+import { initialItems } from "./lib/consts"
+import { useState } from "react"
+
 function App() {
-  return <>Pack And move</>
+  const [items, setItems] = useState(initialItems)
+
+  return (
+    <>
+      <HeadingBackground />
+      <Main>
+        <Header />
+        <ItemList items={items} />
+        <Sidebar setItems={setItems} />
+      </Main>
+      <Footer />
+    </>
+  )
 }
 
 export default App

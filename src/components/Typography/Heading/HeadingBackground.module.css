@@ -1,0 +1,8 @@
+.heading-background {
+  font-size: 60px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.05);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
