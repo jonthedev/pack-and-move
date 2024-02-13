@@ -5,13 +5,15 @@ import { ItemList } from "./components/Feat/ItemList/ItemList"
 import { Main } from "./components/UI/Main/Main"
 import { Sidebar } from "./components/UI/Sidebar/Sidebar"
 
+import { initialItems } from "./lib/consts"
+
 function App() {
   return (
     <>
       <HeadingBackground />
       <Main>
         <Header />
-        <ItemList />
+        <ItemList items={initialItems} />
         <Sidebar />
       </Main>
       <Footer />

@@ -1,20 +1,6 @@
 import { Button } from "../Button/Button"
 import styles from "./ButtonGroup.module.css"
-
-const secondaryButtons = [
-  {
-    text: "Mark all as complete"
-  },
-  {
-    text: "Mark all as incomplete"
-  },
-  {
-    text: "Reset to initial"
-  },
-  {
-    text: "Remove all items"
-  }
-]
+import { secondaryButtons } from "../../../lib/consts"
 
 export const ButtonGroup = () => {
   return (
