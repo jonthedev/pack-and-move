@@ -5,6 +5,11 @@ import { useState } from "react"
 export const AddItemForm = ({ setItems }) => {
   const [itemText, setItemText] = useState("")
 
+  if (!itemText) {
+    alert("Field can not be empty!")
+    return
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault()
 
@@ -23,7 +28,9 @@ export const AddItemForm = ({ setItems }) => {
         type="text"
         value={itemText}
         onChange={(e) => setItemText(e.target.value)}
+        autoFocus
       />
+
       <Button>Add To List</Button>
     </form>
   )
