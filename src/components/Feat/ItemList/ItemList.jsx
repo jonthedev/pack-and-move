@@ -1,10 +1,6 @@
-import { useState } from "react"
-import { initialItems } from "../../../lib/consts"
 import styles from "./ItemList.module.css"
 
-export const ItemList = () => {
-  const [items, setItems] = useState(initialItems)
-
+export const ItemList = ({ items }) => {
   return (
     <ul>
       {items.map((item) => (

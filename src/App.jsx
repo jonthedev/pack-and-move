@@ -6,15 +6,18 @@ import { Main } from "./components/UI/Main/Main"
 import { Sidebar } from "./components/UI/Sidebar/Sidebar"
 
 import { initialItems } from "./lib/consts"
+import { useState } from "react"
 
 function App() {
+  const [items, setItems] = useState(initialItems)
+
   return (
     <>
       <HeadingBackground />
       <Main>
         <Header />
-        <ItemList items={initialItems} />
-        <Sidebar />
+        <ItemList items={items} />
+        <Sidebar setItems={setItems} />
       </Main>
       <Footer />
     </>
