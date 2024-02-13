@@ -11,7 +11,13 @@ import { useState } from "react"
 function App() {
   const [items, setItems] = useState(initialItems)
 
-  const handleAddItem = (newItem) => {
+  const handleAddItem = (newItemText) => {
+    const newItem = {
+      id: new Date().getTime(),
+      name: newItemText,
+      packed: false
+    }
+
     const newItems = [...items, newItem]
     setItems(newItems)
   }
