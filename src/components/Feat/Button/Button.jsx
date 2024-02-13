@@ -1,6 +1,6 @@
 import styles from "./Button.module.css"
 
-export const Button = ({ buttonType, children }) => {
+export const Button = ({ onClick, buttonType, children }) => {
   return (
     <button
       className={
@@ -8,6 +8,7 @@ export const Button = ({ buttonType, children }) => {
           ? `${styles["btn"]} ${styles["btn--secondary"]}`
           : styles["btn"]
       }
+      onClick={onClick}
     >
       {children}
     </button>

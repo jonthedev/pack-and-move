@@ -1,15 +1,12 @@
 import { Button } from "../Button/Button"
 import styles from "./ButtonGroup.module.css"
-import { secondaryButtons } from "../../../lib/consts"
 
-export const ButtonGroup = () => {
+export const ButtonGroup = ({ handleDeleteAllItems }) => {
   return (
     <div className={styles["button-group"]}>
-      {secondaryButtons.map(({ text }) => (
-        <Button key={text} buttonType="secondary">
-          {text}
-        </Button>
-      ))}
+      <Button buttonType="secondary" onClick={handleDeleteAllItems}>
+        Remove all items
+      </Button>
     </div>
   )
 }

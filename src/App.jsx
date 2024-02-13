@@ -22,13 +22,20 @@ function App() {
     setItems(newItems)
   }
 
+  const handleDeleteAllItems = () => {
+    setItems([])
+  }
+
   return (
     <>
       <HeadingBackground />
       <Main>
         <Header />
         <ItemList items={items} />
-        <Sidebar handleAddItem={handleAddItem} />
+        <Sidebar
+          handleAddItem={handleAddItem}
+          handleDeleteAllItems={handleDeleteAllItems}
+        />
       </Main>
       <Footer />
     </>
