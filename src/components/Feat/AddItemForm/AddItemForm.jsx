@@ -2,7 +2,7 @@ import styles from "./AddItemForm.module.css"
 import { Button } from "../Button/Button"
 import { useRef, useState } from "react"
 
-export const AddItemForm = ({ handleAddItem }) => {
+export const AddItemForm = ({ onAddItem }) => {
   const [itemText, setItemText] = useState("")
   const inputRef = useRef()
 
@@ -15,7 +15,7 @@ export const AddItemForm = ({ handleAddItem }) => {
       return
     }
 
-    handleAddItem(itemText)
+    onAddItem(itemText)
     setItemText("")
   }
 

@@ -5,7 +5,7 @@ import styles from "./Sidebar.module.css"
 export const Sidebar = ({ handleAddItem }) => {
   return (
     <div className={styles.sidebar}>
-      <AddItemForm handleAddItem={handleAddItem} />
+      <AddItemForm onAddItem={handleAddItem} />
       <ButtonGroup />
     </div>
   )
