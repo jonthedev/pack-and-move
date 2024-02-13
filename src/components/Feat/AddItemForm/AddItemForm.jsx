@@ -21,6 +21,7 @@ export const AddItemForm = ({ setItems }) => {
       packed: false
     }
     setItems((prevItems) => [...prevItems, newItem])
+    setItemText("")
   }
 
   return (
