@@ -1,23 +1,23 @@
 import styles from "./ItemList.module.css"
 
-export const ItemList = ({ items }) => {
+export const ItemList = ({ items, handleDeleteItem }) => {
   return (
     <ul>
       {items.map((item) => (
-        <Item key={item.name} item={item} />
+        <Item key={item.name} item={item} onClick={handleDeleteItem} />
       ))}
     </ul>
   )
 }
 
-const Item = ({ item }) => {
+const Item = ({ item, onClick }) => {
   return (
     <li className={styles["item"]}>
       <label>
         <input type="checkbox" checked={item.packed} />
         {item.name}
       </label>
-      <button>❌</button>
+      <button onClick={() => onClick(item.id)}>❌</button>
     </li>
   )
 }
