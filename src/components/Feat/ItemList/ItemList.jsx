@@ -7,7 +7,7 @@ export const ItemList = ({ items, handleDeleteItem, handleToggleItem }) => {
         <Item
           key={item.name}
           item={item}
-          onClick={handleDeleteItem}
+          handleDeleteItem={handleDeleteItem}
           handleToggleItem={handleToggleItem}
         />
       ))}
@@ -15,7 +15,7 @@ export const ItemList = ({ items, handleDeleteItem, handleToggleItem }) => {
   )
 }
 
-const Item = ({ item, onClick, handleToggleItem }) => {
+const Item = ({ item, handleDeleteItem, handleToggleItem }) => {
   return (
     <li className={styles["item"]}>
       <label>
@@ -26,7 +26,7 @@ const Item = ({ item, onClick, handleToggleItem }) => {
         />
         {item.name}
       </label>
-      <button onClick={() => onClick(item.id)}>❌</button>
+      <button onClick={() => handleDeleteItem(item.id)}>❌</button>
     </li>
   )
 }
