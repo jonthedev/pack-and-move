@@ -3,10 +3,11 @@
   --secondary-bg-color: #e1dfdb;
   --primary-dark-color: #292218;
   --primary-light-color: #fff;
-  --secondary-light-color: #fffcf9;
+  --secondary-light-color: #f8f5f2;
   --box-shadow-color: rgba(0, 0, 0, 0.08);
-  --border-bottom-color: rgba(0, 0, 0, 0.05);
-  --border-color: rgba(0, 0, 0, 0.07);
+  --border-color: rgba(0, 0, 0, 0.20);
+  --border-secondary-color:
+  --
 
   margin: 0;
   padding: 0;

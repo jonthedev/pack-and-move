@@ -1,23 +1,34 @@
+import EmptyView from "../Empty/EmptyView"
 import styles from "./ItemList.module.css"
 
-export const ItemList = ({ items }) => {
+export const ItemList = ({ items, handleDeleteItem, handleToggleItem }) => {
   return (
-    <ul>
+    <ul className={styles["item-list"]}>
+      {items.length === 0 && <EmptyView />}
       {items.map((item) => (
-        <Item key={item.name} item={item} />
+        <Item
+          key={item.name}
+          item={item}
+          onDeleteItem={handleDeleteItem}
+          handleToggleItem={handleToggleItem}
+        />
       ))}
     </ul>
   )
 }
 
-const Item = ({ item }) => {
+const Item = ({ item, onDeleteItem, handleToggleItem }) => {
   return (
     <li className={styles["item"]}>
       <label>
-        <input type="checkbox" checked={item.packed} />
+        <input
+          type="checkbox"
+          checked={item.packed}
+          onChange={() => handleToggleItem(item.id)}
+        />
         {item.name}
       </label>
-      <button>❌</button>
+      <button onClick={() => onDeleteItem(item.id)}>❌</button>
     </li>
   )
 }

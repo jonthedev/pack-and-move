@@ -11,13 +11,67 @@ import { useState } from "react"
 function App() {
   const [items, setItems] = useState(initialItems)
 
+  const handleAddItem = (newItemText) => {
+    const newItem = {
+      id: new Date().getTime(),
+      name: newItemText,
+      packed: false
+    }
+
+    const newItems = [...items, newItem]
+    setItems(newItems)
+  }
+
+  const handleToggleItem = (id) => {
+    const newItems = items.map((item) => {
+      if (item.id === id) {
+        return { ...item, packed: !item.packed }
+      }
+      return item
+    })
+    setItems(newItems)
+  }
+
+  const handleDeleteItem = (id) => {
+    const newItems = items.filter((item) => item.id !== id)
+    setItems(newItems)
+  }
+
+  const handleDeleteAllItems = () => {
+    setItems([])
+  }
+
+  const handleResetItemsToInitial = () => {
+    setItems(initialItems)
+  }
+
+  const handleMarkAllItemsPacked = () => {
+    const packedItems = items.map((item) => ({ ...item, packed: true }))
+    setItems(packedItems)
+  }
+
+  const handleMarkAllItemsUnPacked = () => {
+    const unPackedItems = items.map((item) => ({ ...item, packed: false }))
+    setItems(unPackedItems)
+  }
+
   return (
     <>
       <HeadingBackground />
       <Main>
         <Header />
-        <ItemList items={items} />
-        <Sidebar setItems={setItems} />
+        <ItemList
+          items={items}
+          handleDeleteItem={handleDeleteItem}
+          handleToggleItem={handleToggleItem}
+        />
+        <Sidebar
+          handleAddItem={handleAddItem}
+          handleDeleteAllItems={handleDeleteAllItems}
+          handleResetItemsToInitial={handleResetItemsToInitial}
+          handleMarkAllItemsPacked={handleMarkAllItemsPacked}
+          handleMarkAllItemsUnPacked={handleMarkAllItemsUnPacked}
+        />
       </Main>
       <Footer />
     </>

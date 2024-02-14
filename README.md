@@ -21,10 +21,11 @@ The project is built and developed using Vite, providing a fast and efficient de
 
 To get started with Pack And Move, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/yourusername/pack-and-move.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Open your browser and navigate to `http://localhost:3000` to view the application
+1. Clone the repository
+2. `cd` into the project
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open your browser and navigate to `http://localhost:3000` to view the application
 
 ## Scripts
 

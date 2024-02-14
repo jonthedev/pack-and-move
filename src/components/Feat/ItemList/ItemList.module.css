@@ -1,9 +1,31 @@
+.item-list {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: var(--primary-light-color);
+  overflow-y: scroll;
+  scrollbar-color: red orange;
+  scrollbar-width: thin;
+  position: relative;
+}
+
+.item-list::-webkit-scrollbar {
+  width: 0;
+}
+
+.item-list::-webkit-scrollbar-track {
+  background: #faf7f3;
+}
+
+.item-list::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-light-color);
+}
+
 .item {
   display: flex;
   position: relative;
   height: 50px;
   font-size: 14px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .item > input {
@@ -21,4 +43,34 @@
   display: flex;
   align-items: center;
   padding: 0 28px;
+}
+
+.item label > input {
+  height: 15px;
+  width: 15px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 2px;
+  outline: 2px solid transparent;
+  transition-duration: 0.3s;
+  background-color: var(--primary-light-color);
+  cursor: pointer;
+  margin-right: 13px;
+  box-sizing: content-box;
+}
+
+.item label > input:hover {
+  border-color: var(--primary-dark-color);
+}
+
+.item label > input:checked {
+  border-color: var(--border-color);
+  background-color: var(--border-color);
+}
+
+.item button {
+  margin-right: 15px;
 }
