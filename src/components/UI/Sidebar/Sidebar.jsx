@@ -6,7 +6,8 @@ export const Sidebar = ({
   handleAddItem,
   handleDeleteAllItems,
   handleResetItemsToInitial,
-  handleMarkAllItemsPacked
+  handleMarkAllItemsPacked,
+  handleMarkAllItemsUnPacked
 }) => {
   return (
     <div className={styles.sidebar}>
@@ -15,6 +16,7 @@ export const Sidebar = ({
         handleDeleteAllItems={handleDeleteAllItems}
         handleResetItemsToInitial={handleResetItemsToInitial}
         handleMarkAllItemsPacked={handleMarkAllItemsPacked}
+        handleMarkAllItemsUnPacked={handleMarkAllItemsUnPacked}
       />
     </div>
   )

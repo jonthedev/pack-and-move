@@ -35,6 +35,11 @@ function App() {
     setItems(packedItems)
   }
 
+  const handleMarkAllItemsUnPacked = () => {
+    const unPackedItems = items.map((item) => ({ ...item, packed: false }))
+    setItems(unPackedItems)
+  }
+
   return (
     <>
       <HeadingBackground />
@@ -46,6 +51,7 @@ function App() {
           handleDeleteAllItems={handleDeleteAllItems}
           handleResetItemsToInitial={handleResetItemsToInitial}
           handleMarkAllItemsPacked={handleMarkAllItemsPacked}
+          handleMarkAllItemsUnPacked={handleMarkAllItemsUnPacked}
         />
       </Main>
       <Footer />
