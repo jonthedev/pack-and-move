@@ -31,7 +31,6 @@ function App() {
   }
 
   const handleMarkAllItemsPacked = () => {
-    //map through all items
     const packedItems = items.map((item) => ({ ...item, packed: true }))
     setItems(packedItems)
   }
