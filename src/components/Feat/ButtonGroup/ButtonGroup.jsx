@@ -34,7 +34,9 @@ export const ButtonGroup = ({
           text={button.text}
           onClick={button.onClick}
           buttonType="secondary"
-        />
+        >
+          {button.text}
+        </Button>
       ))}
     </div>
   )
