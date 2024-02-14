@@ -1,8 +1,10 @@
+import EmptyView from "../Empty/EmptyView"
 import styles from "./ItemList.module.css"
 
 export const ItemList = ({ items, handleDeleteItem, handleToggleItem }) => {
   return (
-    <ul>
+    <ul className={styles["item-list"]}>
+      {items.length === 0 && <EmptyView />}
       {items.map((item) => (
         <Item
           key={item.name}

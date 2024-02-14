@@ -1,3 +1,25 @@
+.item-list {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  background-color: var(--primary-light-color);
+  overflow-y: scroll;
+  scrollbar-color: red orange;
+  scrollbar-width: thin;
+  position: relative;
+}
+
+.item-list::-webkit-scrollbar {
+  width: 0;
+}
+
+.item-list::-webkit-scrollbar-track {
+  background: #faf7f3;
+}
+
+.item-list::-webkit-scrollbar-thumb {
+  background-color: var(--secondary-light-color);
+}
+
 .item {
   display: flex;
   position: relative;
