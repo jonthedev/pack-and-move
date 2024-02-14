@@ -7,20 +7,35 @@ export const ButtonGroup = ({
   handleMarkAllItemsPacked,
   handleMarkAllItemsUnPacked
 }) => {
+  const secondaryButtons = [
+    {
+      text: "Mark all as packed",
+      onClick: handleMarkAllItemsPacked
+    },
+    {
+      text: "Mark all as unpacked",
+      onClick: handleMarkAllItemsUnPacked
+    },
+    {
+      text: "Reset to initial",
+      onClick: handleResetItemsToInitial
+    },
+    {
+      text: "Remove all items",
+      onClick: handleDeleteAllItems
+    }
+  ]
+
   return (
     <div className={styles["button-group"]}>
-      <Button buttonType="secondary" onClick={handleMarkAllItemsPacked}>
-        Mark all as packed
-      </Button>
-      <Button buttonType="secondary" onClick={handleMarkAllItemsUnPacked}>
-        Mark all as unpacked
-      </Button>
-      <Button buttonType="secondary" onClick={handleResetItemsToInitial}>
-        Reset to initial
-      </Button>
-      <Button buttonType="secondary" onClick={handleDeleteAllItems}>
-        Remove all items
-      </Button>
+      {secondaryButtons.map((button) => (
+        <Button
+          key={button.text + button.onClick.toString()}
+          text={button.text}
+          onClick={button.onClick}
+          buttonType="secondary"
+        />
+      ))}
     </div>
   )
 }
