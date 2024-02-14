@@ -30,6 +30,12 @@ function App() {
     setItems(initialItems)
   }
 
+  const handleMarkAllItemsPacked = () => {
+    //map through all items
+    const packedItems = items.map((item) => ({ ...item, packed: true }))
+    setItems(packedItems)
+  }
+
   return (
     <>
       <HeadingBackground />
@@ -40,6 +46,7 @@ function App() {
           handleAddItem={handleAddItem}
           handleDeleteAllItems={handleDeleteAllItems}
           handleResetItemsToInitial={handleResetItemsToInitial}
+          handleMarkAllItemsPacked={handleMarkAllItemsPacked}
         />
       </Main>
       <Footer />

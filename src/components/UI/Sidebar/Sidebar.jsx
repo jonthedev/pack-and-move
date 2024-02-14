@@ -5,7 +5,8 @@ import styles from "./Sidebar.module.css"
 export const Sidebar = ({
   handleAddItem,
   handleDeleteAllItems,
-  handleResetItemsToInitial
+  handleResetItemsToInitial,
+  handleMarkAllItemsPacked
 }) => {
   return (
     <div className={styles.sidebar}>
@@ -13,6 +14,7 @@ export const Sidebar = ({
       <ButtonGroup
         handleDeleteAllItems={handleDeleteAllItems}
         handleResetItemsToInitial={handleResetItemsToInitial}
+        handleMarkAllItemsPacked={handleMarkAllItemsPacked}
       />
     </div>
   )
