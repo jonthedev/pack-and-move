@@ -1,12 +1,15 @@
 import styles from "./Header.module.css"
-import { Counter } from "../Counter/Counter"
 import { Logo } from "../Logo/Logo"
+import { Counter } from "../../Feat/Counter/Counter"
 
-export const Header = () => {
+export const Header = ({ numberOfItemsPacked, totalNumberOfItems }) => {
   return (
     <header className={styles.header}>
       <Logo />
-      <Counter />
+      <Counter
+        numberOfItemsPacked={numberOfItemsPacked}
+        totalNumberOfItems={totalNumberOfItems}
+      />
     </header>
   )
 }
