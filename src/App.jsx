@@ -6,10 +6,11 @@ import { Main } from "./components/UI/Main/Main"
 import { Sidebar } from "./components/UI/Sidebar/Sidebar"
 
 import { initialItems } from "./lib/consts"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function App() {
-  const [items, setItems] = useState(initialItems)
+  const itemsFromLocalStorage = JSON.parse(localStorage.getItem("items"))
+  const [items, setItems] = useState(itemsFromLocalStorage || initialItems)
 
   const handleAddItem = (newItemText) => {
     const newItem = {
@@ -56,6 +57,10 @@ function App() {
   }
 
   const numberOfItemsPacked = items.filter((item) => item.packed === true)
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items))
+  }, [items])
 
   return (
     <>
