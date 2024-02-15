@@ -9,8 +9,9 @@ import { initialItems } from "./lib/consts"
 import { useEffect, useState } from "react"
 
 function App() {
-  const itemsFromLocalStorage = JSON.parse(localStorage.getItem("items"))
-  const [items, setItems] = useState(itemsFromLocalStorage || initialItems)
+  const [items, setItems] = useState(
+    () => JSON.parse(localStorage.getItem("items")) || initialItems
+  )
 
   const handleAddItem = (newItemText) => {
     const newItem = {
