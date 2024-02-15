@@ -1,7 +1,7 @@
 import styles from "./ItemList.module.css"
 import Select from "react-select"
 import EmptyView from "../Empty/EmptyView"
-import { useState } from "react"
+import { useMemo, useState } from "react"
 
 const sortingOptions = [
   {
@@ -21,15 +21,19 @@ const sortingOptions = [
 export const ItemList = ({ items, handleDeleteItem, handleToggleItem }) => {
   const [sortBy, setSortBy] = useState("default")
 
-  const sortedItems = [...items].sort((a, b) => {
-    if (sortBy == "packed") {
-      return b.packed - a.packed
-    }
-    if (sortBy == "unpacked") {
-      return a.packed - b.packed
-    }
-    return
-  })
+  const sortedItems = useMemo(
+    () =>
+      [...items].sort((a, b) => {
+        if (sortBy == "packed") {
+          return b.packed - a.packed
+        }
+        if (sortBy == "unpacked") {
+          return a.packed - b.packed
+        }
+        return
+      }),
+    [items, sortBy]
+  )
 
   return (
     <ul className={styles["item-list"]}>
