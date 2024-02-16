@@ -1,23 +1,15 @@
+import { useContext } from "react"
 import { AddItemForm } from "../../Feat/AddItemForm/AddItemForm"
 import { ButtonGroup } from "../../Feat/ButtonGroup/ButtonGroup"
 import styles from "./Sidebar.module.css"
+import { ItemsContext } from "../../../context/ItemsContextProvider"
 
-export const Sidebar = ({
-  handleAddItem,
-  handleDeleteAllItems,
-  handleResetItemsToInitial,
-  handleMarkAllItemsPacked,
-  handleMarkAllItemsUnPacked
-}) => {
+export const Sidebar = () => {
+  const { handleAddItem } = useContext(ItemsContext)
   return (
     <div className={styles.sidebar}>
       <AddItemForm onAddItem={handleAddItem} />
-      <ButtonGroup
-        handleDeleteAllItems={handleDeleteAllItems}
-        handleResetItemsToInitial={handleResetItemsToInitial}
-        handleMarkAllItemsPacked={handleMarkAllItemsPacked}
-        handleMarkAllItemsUnPacked={handleMarkAllItemsUnPacked}
-      />
+      <ButtonGroup />
     </div>
   )
 }

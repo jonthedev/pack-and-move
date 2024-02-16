@@ -1,7 +1,8 @@
 import styles from "./ItemList.module.css"
 import Select from "react-select"
 import EmptyView from "../Empty/EmptyView"
-import { useMemo, useState } from "react"
+import { useContext, useMemo, useState } from "react"
+import { ItemsContext } from "../../../context/ItemsContextProvider"
 
 const sortingOptions = [
   {
@@ -18,8 +19,9 @@ const sortingOptions = [
   }
 ]
 
-export const ItemList = ({ items, handleDeleteItem, handleToggleItem }) => {
+export const ItemList = () => {
   const [sortBy, setSortBy] = useState("default")
+  const { items, handleToggleItem, handleDeleteItem } = useContext(ItemsContext)
 
   const sortedItems = useMemo(
     () =>
@@ -53,22 +55,22 @@ export const ItemList = ({ items, handleDeleteItem, handleToggleItem }) => {
         <Item
           key={item.name}
           item={item}
+          onToggleItem={handleToggleItem}
           onDeleteItem={handleDeleteItem}
-          handleToggleItem={handleToggleItem}
         />
       ))}
     </ul>
   )
 }
 
-const Item = ({ item, onDeleteItem, handleToggleItem }) => {
+const Item = ({ item, onToggleItem, onDeleteItem }) => {
   return (
     <li className={styles["item"]}>
       <label>
         <input
           type="checkbox"
           checked={item.packed}
-          onChange={() => handleToggleItem(item.id)}
+          onChange={() => onToggleItem(item.id)}
         />
         {item.name}
       </label>

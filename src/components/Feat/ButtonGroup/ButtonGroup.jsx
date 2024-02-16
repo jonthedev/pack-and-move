@@ -1,12 +1,16 @@
+import { useContext } from "react"
 import { Button } from "../Button/Button"
 import styles from "./ButtonGroup.module.css"
+import { ItemsContext } from "../../../context/ItemsContextProvider"
 
-export const ButtonGroup = ({
-  handleDeleteAllItems,
-  handleResetItemsToInitial,
-  handleMarkAllItemsPacked,
-  handleMarkAllItemsUnPacked
-}) => {
+export const ButtonGroup = () => {
+  const {
+    handleMarkAllItemsPacked,
+    handleMarkAllItemsUnPacked,
+    handleResetItemsToInitial,
+    handleDeleteAllItems
+  } = useContext(ItemsContext)
+
   const secondaryButtons = [
     {
       text: "Mark all as packed",
