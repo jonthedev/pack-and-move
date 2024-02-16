@@ -4,18 +4,15 @@ import { Header } from "./components/UI/Header/Header"
 import { ItemList } from "./components/Feat/ItemList/ItemList"
 import { Main } from "./components/UI/Main/Main"
 import { Sidebar } from "./components/UI/Sidebar/Sidebar"
-import { ItemsContextProvider } from "./context/ItemsContextProvider"
 
 function App() {
   return (
     <>
       <HeadingBackground />
       <Main>
-        <ItemsContextProvider>
-          <Header />
-          <ItemList />
-          <Sidebar />
-        </ItemsContextProvider>
+        <Header />
+        <ItemList />
+        <Sidebar />
       </Main>
       <Footer />
     </>

@@ -1,31 +1,31 @@
+import { useItemStore } from "../../../stores/itemsStore"
 import { Button } from "../Button/Button"
 import styles from "./ButtonGroup.module.css"
-import { useItemsContext } from "../../../hooks/context"
 
 export const ButtonGroup = () => {
-  const {
-    handleMarkAllItemsPacked,
-    handleMarkAllItemsUnPacked,
-    handleResetItemsToInitial,
-    handleDeleteAllItems
-  } = useItemsContext()
+  const markAllItemsPacked = useItemStore((state) => state.markAllItemsPacked)
+  const markAllItemsUnPacked = useItemStore(
+    (state) => state.markAllItemsUnPacked
+  )
+  const resetItemsToInitial = useItemStore((state) => state.resetItemsToInitial)
+  const deleteAllItems = useItemStore((state) => state.deleteAllItems)
 
   const secondaryButtons = [
     {
       text: "Mark all as packed",
-      onClick: handleMarkAllItemsPacked
+      onClick: markAllItemsPacked
     },
     {
       text: "Mark all as unpacked",
-      onClick: handleMarkAllItemsUnPacked
+      onClick: markAllItemsUnPacked
     },
     {
       text: "Reset to initial",
-      onClick: handleResetItemsToInitial
+      onClick: resetItemsToInitial
     },
     {
       text: "Remove all items",
-      onClick: handleDeleteAllItems
+      onClick: deleteAllItems
     }
   ]
 
