@@ -1,7 +1,6 @@
-import { useContext } from "react"
 import { Button } from "../Button/Button"
 import styles from "./ButtonGroup.module.css"
-import { ItemsContext } from "../../../context/ItemsContextProvider"
+import { useItemsContext } from "../../../hooks/context"
 
 export const ButtonGroup = () => {
   const {
@@ -9,7 +8,7 @@ export const ButtonGroup = () => {
     handleMarkAllItemsUnPacked,
     handleResetItemsToInitial,
     handleDeleteAllItems
-  } = useContext(ItemsContext)
+  } = useItemsContext()
 
   const secondaryButtons = [
     {

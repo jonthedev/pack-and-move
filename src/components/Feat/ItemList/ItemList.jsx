@@ -1,8 +1,8 @@
 import styles from "./ItemList.module.css"
 import Select from "react-select"
 import EmptyView from "../Empty/EmptyView"
-import { useContext, useMemo, useState } from "react"
-import { ItemsContext } from "../../../context/ItemsContextProvider"
+import { useMemo, useState } from "react"
+import { useItemsContext } from "../../../hooks/context"
 
 const sortingOptions = [
   {
@@ -21,7 +21,7 @@ const sortingOptions = [
 
 export const ItemList = () => {
   const [sortBy, setSortBy] = useState("default")
-  const { items, handleToggleItem, handleDeleteItem } = useContext(ItemsContext)
+  const { items, handleToggleItem, handleDeleteItem } = useItemsContext()
 
   const sortedItems = useMemo(
     () =>
